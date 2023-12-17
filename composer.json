@@ -1,0 +1,17 @@
+{
+    "name": "wordpress/plugin",
+    "description": "this has been made for ensuring wordpress coding standard",
+    "type": "plugin",
+    "license": "gplv2",
+    "minimum-stability": "dev",
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*",
+        "wp-coding-standards/wpcs": "*",
+        "phpcompatibility/phpcompatibility-wp": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
