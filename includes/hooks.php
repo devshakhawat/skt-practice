@@ -9,7 +9,12 @@ class Hooks {
 
     public function plugin_loaded() {
         global $wpdb;
-        $charset   = $wpdb->get_charset_collate();
+
+        $skt_db_version = '1.0';
+
+        if ( get_option("{$wpdb->prefix}frontend_form") == $skt_db_version ) return;
+        
+        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 
         $sql = "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}frontend_form (
             id INT(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -26,8 +31,13 @@ class Hooks {
             entry_at date,
             entry_by int(10),
             PRIMARY KEY (id)
-            )" . $charset . ";";
+            )" . $wpdb->get_charset_collate() . ";";
 
-        dbDelta( $sql );
+        if ( get_option("{$wpdb->prefix}frontend_form") < $skt_db_version ) {
+            dbDelta( $sql );
+        }
+
+        update_option( "{$wpdb->prefix}frontend_form", $skt_db_version );
+
     } 
 }
