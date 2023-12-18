@@ -2,6 +2,8 @@
 // phpcs:ignoreFile
 namespace SKTPRAC;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class Hooks {
     public function __construct() {
         

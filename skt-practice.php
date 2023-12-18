@@ -22,7 +22,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Defining constants
  */
-if ( ! defined( 'SKT_PRAC_VERSION' ) ) define( 'SKT_PRAC_VERSION', '1.6.1' );
+if ( ! defined( 'SKT_PRAC_VERSION' ) ) define( 'SKT_PRAC_VERSION', '1.0.0' );
 if ( ! defined( 'SKT_PRAC_PLUGIN_DIR' ) ) define( 'SKT_PRAC_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 if ( ! defined( 'SKT_PRAC_PLUGIN_URI' ) ) define( 'SKT_PRAC_PLUGIN_URI', plugins_url( '', __FILE__ ) );
 if ( ! defined( 'SKT_PRAC_BASE_NAME' ) ) define( 'SKT_PRAC_BASE_NAME', plugin_basename( __FILE__ ) );
