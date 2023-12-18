@@ -28,8 +28,8 @@ if ( ! defined( 'SKT_PRAC_PLUGIN_URI' ) ) define( 'SKT_PRAC_PLUGIN_URI', plugins
 if ( ! defined( 'SKT_PRAC_BASE_NAME' ) ) define( 'SKT_PRAC_BASE_NAME', plugin_basename( __FILE__ ) );
 
 if ( ! class_exists( '\SKTPRAC\Autoloader' ) ) {
-    require GS_WOO_PLUGIN_DIR . 'includes/autoloader.php';
+    require SKT_PRAC_PLUGIN_DIR . 'includes/autoloader.php';
     \SKTPRAC\Autoloader::init();
 }
 
-require_once GS_WOO_PLUGIN_DIR . 'includes/plugin.php';
+require_once SKT_PRAC_PLUGIN_DIR . 'includes/plugin.php';

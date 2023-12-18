@@ -6,8 +6,10 @@ namespace SKTPRAC;
 defined('ABSPATH') || exit;
 
 $classmaps = [
-	'Admin'              => 'includes/admin.php',
-	'Ajax'               => 'includes/ajax.php'
+	'Ajax'                 => 'includes/ajax.php',
+	'Assets'               => 'includes/assets.php',
+	'Shortcode'            => 'includes/shortcode.php',
+	'Hooks'            	   => 'includes/hooks.php',
 ];
 
 return $classmaps;

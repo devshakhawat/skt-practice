@@ -1,7 +1,7 @@
 {
-  "name": "gs-variation-swatches",
-  "version": "1.6.1",
-  "description": "GS Variation Swatches Plugin",
+  "name": "skt-practice",
+  "version": "1.0.0",
+  "description": "Skt Practice Plugin",
   "main": "index.js",
   "scripts": {
     "start": "mix watch",

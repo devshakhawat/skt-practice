@@ -33,7 +33,7 @@ class Autoloader {
      * 
      * Classes folder used for @package Solid Testimonials.
      */
-    private static $SOURCE_DIRECTORY = GS_WOO_PLUGIN_DIR;
+    private static $SOURCE_DIRECTORY = SKT_PRAC_PLUGIN_DIR;
 
     /**
      * Classmap file for Autoloader
