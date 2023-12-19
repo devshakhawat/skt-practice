@@ -4,7 +4,7 @@ $( '#data-form' ).submit(function(e){
 
     e.preventDefault();
 
-    let form_data = $(this).serialize();
+    let form_data = $(this).serializeArray();
 
     $.ajax({
         type: 'POST',

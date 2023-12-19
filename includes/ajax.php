@@ -20,6 +20,12 @@ class Ajax {
 
         // global $wpdb;
 
+        
+        $fff = $_POST['settings'];
+
+        // $ggg = unserialize($_POST['settings']);
+        
+        pretty_log($fff);
 
 
 

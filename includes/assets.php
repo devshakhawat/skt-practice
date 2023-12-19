@@ -18,7 +18,6 @@ class Assets {
         // JS
         wp_register_script( 'frontend-form', SKT_PRAC_PLUGIN_URI . '/assets/js/data-form.js', ['jquery'], SKT_PRAC_VERSION, true );
 
-
         wp_localize_script( 'frontend-form', '_form_settings', $this->get_localize_data() );
 
 
