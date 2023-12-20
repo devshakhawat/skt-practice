@@ -22,14 +22,11 @@ mix.webpackConfig({
 // Disable notification on dev mode
 if ( process.env.NODE_ENV.trim() !== 'production' ) mix.disableNotifications();
 
-// Public
-// mix.sass('./dev/public/index.scss', './assets/css/public.min.css');
-// mix.scripts('./dev/public/index.js', './assets/js/public.min.js');
+// JS
+mix.scripts('./dev/js/data-form.js', './assets/js/data-form.min.js');
 
-// // Admin
-// mix.sass('./dev/admin/index.scss', './assets/admin/css/admin.min.css');
-// mix.sass('./dev/admin/single-prod-item.scss', './assets/admin/css/single-prod-item-admin.min.css');
-// mix.js('./dev/admin/index.js', './assets/admin/js/admin.min.js').vue();
+// CSS
+mix.sass('./dev/css/data-form.scss', './assets/css/data-form.min.css');
 
 
 if ( process.env.NODE_ENV.trim() === 'production' ) {
@@ -38,6 +35,6 @@ if ( process.env.NODE_ENV.trim() === 'production' ) {
 		destFile: 'languages/gs-practice.pot',
 		domain: 'gs-practice',
 		package: 'Practice',
-		src: ['**/*.php', '!freemius/**/*.php']
+		src: ['**/*.php']
 	});
 }

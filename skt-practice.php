@@ -33,3 +33,4 @@ if ( ! class_exists( '\SKTPRAC\Autoloader' ) ) {
 }
 
 require_once SKT_PRAC_PLUGIN_DIR . 'includes/plugin.php';
+require_once SKT_PRAC_PLUGIN_DIR . 'includes/functions.php';
