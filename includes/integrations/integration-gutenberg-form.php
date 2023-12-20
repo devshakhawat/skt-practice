@@ -21,19 +21,19 @@ class Integration_Gutenberg_Form {
 
         // wp_add_inline_style( 'wp-block-editor', $this->get_block_css() );
 
-        // wp_register_script( 'gs-logo-block', GSL_PLUGIN_URI . '/includes/integrations/assets/gutenberg/gutenberg-widget.min.js', ['wp-blocks', 'wp-editor'], GSL_VERSION );
+        wp_register_script( 'skt-gut-form-block', SKT_PRAC_PLUGIN_URI . '/includes/integrations/assets/gutenberg/gutenberg-form-widget.min.js', ['wp-blocks', 'wp-editor'], SKT_PRAC_VERSION );
         
-        // $gs_logo_slider_block = array(
-        //     'select_shortcode'        => __( 'Select Shortcode', 'gslogo' ),
-        //     'edit_description_text'   => __( 'Edit this shortcode', 'gslogo' ),
-        //     'edit_link_text'          => __( 'Edit', 'gslogo' ),
-        //     'create_description_text' => __( 'Create new shortcode', 'gslogo' ),
-        //     'create_link_text'        => __( 'Create', 'gslogo' ),
-        //     'edit_link'               => admin_url( "edit.php?post_type=gs-logo-slider&page=gs-logo-shortcode#/shortcode/" ),
-        //     'create_link'             => admin_url( 'edit.php?post_type=gs-logo-slider&page=gs-logo-shortcode#/shortcode' ),
-        //     'shortcodes'              => $this->get_shortcode_list()
-		// );
-		// wp_localize_script( 'gs-logo-block', 'gs_logo_slider_block', $gs_logo_slider_block );
+        $skt_form_block = array(
+            'select_shortcode'        => __( 'Select Shortcode', 'skt' ),
+            'edit_description_text'   => __( 'Edit this shortcode', 'skt' ),
+            'edit_link_text'          => __( 'Edit', 'skt' ),
+            'create_description_text' => __( 'Create new shortcode', 'skt' ),
+            'create_link_text'        => __( 'Create', 'skt' ),
+            // 'edit_link'               => admin_url( "edit.php?post_type=gs-logo-slider&page=gs-logo-shortcode#/shortcode/" ),
+            // 'create_link'             => admin_url( 'edit.php?post_type=gs-logo-slider&page=gs-logo-shortcode#/shortcode' ),
+            // 'shortcodes'              => $this->get_shortcode_list()
+		);
+		wp_localize_script( 'skt-gut-form-block', 'skt_form_block', $skt_form_block );
 
         register_block_type( 'sktprac/shortcode_form', array(
             'editor_script' => '',
