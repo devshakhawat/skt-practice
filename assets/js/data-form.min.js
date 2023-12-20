@@ -26,7 +26,15 @@ $( '#data-form' ).submit(function(e){
         
     });
     
-})
+});
+
+$('.skt-delete-data').on( 'click', function(e) {
+    e.preventDefault();
+
+    
+
+
+} );
 
 
 } )(jQuery);

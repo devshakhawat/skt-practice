@@ -7,8 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 class Hooks {
     public function __construct() {
         
-        add_action( 'plugins_loaded', [ $this, 'plugin_loaded' ] );
-        
+        add_action( 'plugins_loaded', [ $this, 'plugin_loaded' ] );        
     }
 
     public function plugin_loaded() {

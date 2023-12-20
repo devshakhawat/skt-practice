@@ -33,10 +33,7 @@ $shortcodes = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}frontend_form OR
     </tr>
   </thead>
   <tbody>
-      <?php foreach($shortcodes as $shortcode): ?>
-
-        <?php error_log( print_r( $shortcode, true ) );?>
-    
+      <?php foreach($shortcodes as $shortcode): ?>    
     <tr>
       <td><?php echo esc_html( $shortcode['id'] ); ?></td>
       <td><?php echo esc_html( $shortcode['amount'] ); ?></td>
@@ -52,7 +49,7 @@ $shortcodes = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}frontend_form OR
       <td><?php echo esc_html( $shortcode['entry_at'] ); ?></td>
       <td><?php echo esc_html( $shortcode['entry_by'] ); ?></td>
       <td><?php echo esc_html( 'Edit' ); ?></td>
-      <td><?php echo esc_html( 'Delete' ); ?></td>
+      <td class="skt-delete-data"><?php echo esc_html( 'Delete' ); ?></td>
     </tr>
     <?php endforeach; ?>
   </tbody>

@@ -19,8 +19,13 @@ class Shortcode {
     } 
 
     public function datatable_shortcode() {
+        
         ob_start();
-            include_once SKT_PRAC_PLUGIN_DIR. 'templates/data-table.php';
+            if ( ! current_user_can('edit_posts') ) {
+                return 'This content is restricted to Editors and above.';
+            } else {
+                include_once SKT_PRAC_PLUGIN_DIR. 'templates/data-table.php';
+            }
         return ob_get_clean();
     } 
 

@@ -29,6 +29,7 @@ class Assets {
 
         return [ 
             "nonce"       => wp_create_nonce("skt_validate_form"),
+            "delete"      => wp_create_nonce("skt_delete_form_data"),
             "ajaxurl"     => admin_url( "admin-ajax.php" )
         ];
     }

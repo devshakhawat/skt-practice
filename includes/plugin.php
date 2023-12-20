@@ -11,6 +11,8 @@ class Plugin {
 	public $assets;
 	public $shortcode;
 	public $hooks;	
+	public $widget;	
+	public $intergrations;
 
 	public static function instance() {
 		if ( ! self::$_instance ) {
@@ -25,6 +27,8 @@ class Plugin {
 		$this->assets   		= new Assets();
 		$this->shortcode   		= new Shortcode();	
 		$this->hooks   			= new Hooks();	
+		$this->widget           = new Widget();
+		$this->intergrations    = new Integrations();
 
 	}
 
