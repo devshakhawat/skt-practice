@@ -71,3 +71,7 @@ th, td {
 th {
   background-color: #f2f2f2;
 }
+
+.skt-delete-data a {
+  color: red;
+}

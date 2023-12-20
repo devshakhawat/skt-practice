@@ -10,6 +10,7 @@ class Ajax {
     public function __construct() {
 
         add_action('wp_ajax_skt_form_data', [$this, 'insert_into_db']);
+        add_action('wp_ajax_skt_delete_data', [$this, 'delete_from_db']);
     }
 
     public function insert_into_db() {
@@ -60,6 +61,20 @@ class Ajax {
 
         wp_send_json_success();
     }
+
+    public function delete_from_db() {
+        if (!check_admin_referer('skt_delete_form_data') || !current_user_can('manage_options')) {
+            wp_send_json_error(__('Unauthorised Request', 'skt'), 401);
+        }
+
+        global $wpdb;
+
+        $id = $_POST['id'];
+
+        $wpdb->delete( "{$wpdb->prefix}frontend_form", [ 'id' => $id ], ['%d'] );
+
+        wp_send_json_success();
+    } 
 
     public function get_user_ip() {
 

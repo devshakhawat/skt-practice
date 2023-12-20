@@ -3,16 +3,17 @@
 namespace SKTPRAC;
 
 global $wpdb;
-$shortcodes = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}frontend_form ORDER BY id DESC", ARRAY_A );
-
-// foreach( $shortcodes as $shortcode ) {
-//     pretty_log($shortcode['id']);
-// }
+$form_datas = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}frontend_form ORDER BY id DESC", ARRAY_A );
 
 ?>
 
 
 <table>
+  <div>
+    <input type="search" id="gsearch" name="gsearch">
+    <input type="submit" value="Search">
+  </div>
+
   <thead>
     <tr>
       <th><?php esc_html_e('ID', 'skt'); ?></th>
@@ -33,23 +34,23 @@ $shortcodes = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}frontend_form OR
     </tr>
   </thead>
   <tbody>
-      <?php foreach($shortcodes as $shortcode): ?>    
-    <tr>
-      <td><?php echo esc_html( $shortcode['id'] ); ?></td>
-      <td><?php echo esc_html( $shortcode['amount'] ); ?></td>
-      <td><?php echo esc_html( $shortcode['buyer'] ); ?></td>
-      <td><?php echo esc_html( $shortcode['receipt_id'] ); ?></td>
-      <td><?php echo esc_html( $shortcode['items'] ); ?></td>
-      <td><?php echo esc_html( $shortcode['buyer_email'] ); ?></td>
-      <td><?php echo esc_html( $shortcode['buyer_ip'] ); ?></td>
-      <td><?php echo esc_html( $shortcode['note'] ); ?></td>
-      <td><?php echo esc_html( $shortcode['city'] ); ?></td>
-      <td><?php echo esc_html( $shortcode['phone'] ); ?></td>
-      <td><?php echo esc_html( $shortcode['hash_key'] ); ?></td>
-      <td><?php echo esc_html( $shortcode['entry_at'] ); ?></td>
-      <td><?php echo esc_html( $shortcode['entry_by'] ); ?></td>
+      <?php foreach($form_datas as $data): ?>    
+    <tr data-id="<?php echo esc_attr($data['id']); ?>">
+      <td><?php echo esc_html( $data['id'] ); ?></td>
+      <td><?php echo esc_html( $data['amount'] ); ?></td>
+      <td><?php echo esc_html( $data['buyer'] ); ?></td>
+      <td><?php echo esc_html( $data['receipt_id'] ); ?></td>
+      <td><?php echo esc_html( $data['items'] ); ?></td>
+      <td><?php echo esc_html( $data['buyer_email'] ); ?></td>
+      <td><?php echo esc_html( $data['buyer_ip'] ); ?></td>
+      <td><?php echo esc_html( $data['note'] ); ?></td>
+      <td><?php echo esc_html( $data['city'] ); ?></td>
+      <td><?php echo esc_html( $data['phone'] ); ?></td>
+      <td><?php echo esc_html( $data['hash_key'] ); ?></td>
+      <td><?php echo esc_html( $data['entry_at'] ); ?></td>
+      <td><?php echo esc_html( $data['entry_by'] ); ?></td>
       <td><?php echo esc_html( 'Edit' ); ?></td>
-      <td class="skt-delete-data"><?php echo esc_html( 'Delete' ); ?></td>
+      <td class="skt-delete-data"><a href="#"><?php echo esc_html( 'Delete' ); ?></a></td>
     </tr>
     <?php endforeach; ?>
   </tbody>

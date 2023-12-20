@@ -28,8 +28,32 @@ $( '#data-form' ).submit(function(e){
     
 });
 
-$('.skt-delete-data').on( 'click', function(e) {
+$('.skt-delete-data a').on( 'click', function(e) {
     e.preventDefault();
+
+    let row = $(this).closest('tr');
+    var itemId = row.data('id');
+
+    $.ajax({
+        type: 'POST',
+        url: _form_settings.ajaxurl,
+		cache: false,
+        data: {
+            action: 'skt_delete_data',
+            _wpnonce: _form_settings.delete,
+            id: itemId
+        }
+    }).then((response) => {
+    
+        console.log(response);
+        location.reload();
+        
+    
+    }).fail((response) => {
+    
+        console.log(response);
+        
+    });
 
     
 
