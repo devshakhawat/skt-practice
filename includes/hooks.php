@@ -8,6 +8,7 @@ class Hooks {
     public function __construct() {
         
         add_action( 'plugins_loaded', [ $this, 'plugin_loaded' ] );
+        
     }
 
     public function plugin_loaded() {
@@ -43,4 +44,8 @@ class Hooks {
         update_option( "{$wpdb->prefix}frontend_form", $skt_db_version );
 
     } 
+
+    
+
+    
 }
