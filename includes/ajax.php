@@ -22,7 +22,7 @@ class Ajax {
             wp_send_json_error(__('Unauthorised Request', 'skt'), 401);
         }        
         
-        // if(! $this->handle_form_submission()) return;
+        if(! $this->handle_form_submission()) return;
       
         
         $field_values      = $_POST['settings'];

@@ -72,6 +72,12 @@ import alertify from 'alertifyjs';
                 _wpnonce: _form_settings.delete,
                 id: itemId
             }
+        }).then((response) => {
+        
+            location.reload();            
+        
+        }).fail((response) => {
+            location.reload();         
         });
 
     } );
