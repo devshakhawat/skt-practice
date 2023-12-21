@@ -1,7 +1,8 @@
+
 ( function($){
 
-$( '#data-form' ).submit(function(e){
-
+    $( '#data-form' ).submit(function(e){
+        
     e.preventDefault();
 
     let form_data = $(this).serializeArray();
@@ -17,7 +18,7 @@ $( '#data-form' ).submit(function(e){
         }
     }).then((response) => {
     
-        console.log(response);
+        // alertify.alert('This is an Alertify alert!');
         
     
     }).fail((response) => {

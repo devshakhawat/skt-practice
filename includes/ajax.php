@@ -11,6 +11,7 @@ class Ajax {
 
         add_action('wp_ajax_skt_form_data', [$this, 'insert_into_db']);
         add_action('wp_ajax_skt_delete_data', [$this, 'delete_from_db']);
+        add_action('wp_ajax_skt_edit_data', [$this, 'edit_from_db']);
     }
 
     public function insert_into_db() {
@@ -74,6 +75,18 @@ class Ajax {
         $wpdb->delete( "{$wpdb->prefix}frontend_form", [ 'id' => $id ], ['%d'] );
 
         wp_send_json_success();
+    } 
+
+    public function edit_from_db() {
+
+        if (!check_admin_referer('skt_edit_form_data') || !current_user_can('manage_options')) {
+            wp_send_json_error(__('Unauthorised Request', 'skt'), 401);
+        }
+
+        include_once SKT_PRAC_PLUGIN_DIR. 'templates/data-form.php';
+
+        wp_send_json_success();
+        
     } 
 
     public function get_user_ip() {

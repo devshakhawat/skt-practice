@@ -26,7 +26,7 @@ $form_datas = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}frontend_form OR
       <th><?php esc_html_e('Note', 'skt'); ?></th>
       <th><?php esc_html_e('City', 'skt'); ?></th>
       <th><?php esc_html_e('Phone', 'skt'); ?></th>
-      <th><?php esc_html_e('Hash Key', 'skt'); ?></th>
+      <th><?php // esc_html_e('Hash Key', 'skt'); ?></th>
       <th><?php esc_html_e('Entry At', 'skt'); ?></th>
       <th><?php esc_html_e('Entry By', 'skt'); ?></th>
       <th><?php esc_html_e('Edit', 'skt'); ?></th>
@@ -46,10 +46,10 @@ $form_datas = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}frontend_form OR
       <td><?php echo esc_html( $data['note'] ); ?></td>
       <td><?php echo esc_html( $data['city'] ); ?></td>
       <td><?php echo esc_html( $data['phone'] ); ?></td>
-      <td><?php echo esc_html( $data['hash_key'] ); ?></td>
+      <td><?php // echo esc_html( $data['hash_key'] ); ?></td>
       <td><?php echo esc_html( $data['entry_at'] ); ?></td>
       <td><?php echo esc_html( $data['entry_by'] ); ?></td>
-      <td><?php echo esc_html( 'Edit' ); ?></td>
+      <td class="skt-edit-data"><a href="#"><?php echo esc_html( 'Edit' ); ?></a></td>
       <td class="skt-delete-data"><a href="#"><?php echo esc_html( 'Delete' ); ?></a></td>
     </tr>
     <?php endforeach; ?>
