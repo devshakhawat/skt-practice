@@ -1,4 +1,4 @@
-
+import alertify from 'alertifyjs';
 ( function($){
 
     $( '#data-form' ).submit(function(e){
@@ -17,8 +17,12 @@
             settings: form_data
         }
     }).then((response) => {
+
+        console.log('data saved');
+        
     
         // alertify.alert('This is an Alertify alert!');
+        alertify.notify('Hello, You Data Saved');
         
     
     }).fail((response) => {

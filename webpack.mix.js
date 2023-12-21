@@ -23,7 +23,7 @@ mix.webpackConfig({
 if ( process.env.NODE_ENV.trim() !== 'production' ) mix.disableNotifications();
 
 // JS
-mix.scripts('./dev/js/data-form.js', './assets/js/data-form.min.js');
+mix.js('./dev/js/data-form.js', './assets/js/data-form.min.js');
 
 // Guntenberg
 mix.js('./includes/integrations/assets/gutenberg-data/gutenberg-data-widget.js', './includes/integrations/assets/gutenberg-data/gutenberg-data-widget.min.js');
