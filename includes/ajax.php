@@ -18,7 +18,7 @@ class Ajax {
 
         $this->handle_form_submission();
 
-        // if( ! $this->check_form_submission() ) return;
+        if( ! $this->check_form_submission() ) return;
 
         global $wpdb;
 
@@ -113,6 +113,8 @@ class Ajax {
     public function check_form_submission() {
 
         if (isset($_COOKIE['form_submitted'])) {
+
+            pretty_log('Submitted Before');
 
             echo '<script>alert("You have already submitted the form within the last hour.");</script>';
 

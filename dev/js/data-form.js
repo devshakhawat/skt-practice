@@ -27,7 +27,7 @@ import alertify from 'alertifyjs';
     
     }).fail((response) => {
     
-        console.log(response);
+        alertify.notify('Hello, You Data Saved');
         
     });
     
