@@ -75,3 +75,8 @@ th {
 .skt-delete-data a {
   color: red;
 }
+
+.alertify-notifier {
+  color: white;
+  background-color: green;
+}

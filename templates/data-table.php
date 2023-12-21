@@ -3,16 +3,23 @@
 namespace SKTPRAC;
 
 global $wpdb;
-$form_datas = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}frontend_form ORDER BY id DESC", ARRAY_A );
+
+$form_datas = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}frontend_form ORDER BY id DESC", ARRAY_A);
+
+$search_item = isset($_GET['gsearch']) ? $_GET['gsearch'] : '';
+
+if( !empty($search_item) ) {
+  $sql = $wpdb->prepare("SELECT * FROM {$wpdb->prefix}frontend_form WHERE items LIKE '%%%s%%'", $search_item);
+  $form_datas = $wpdb->get_results( $sql, ARRAY_A);
+}
 
 ?>
 
-
 <table>
-  <div>
+  <form action="" method="GET">
     <input type="search" id="gsearch" name="gsearch">
     <input type="submit" value="Search">
-  </div>
+</form>
 
   <thead>
     <tr>
@@ -49,7 +56,7 @@ $form_datas = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}frontend_form OR
       <td><?php // echo esc_html( $data['hash_key'] ); ?></td>
       <td><?php echo esc_html( $data['entry_at'] ); ?></td>
       <td><?php echo esc_html( $data['entry_by'] ); ?></td>
-      <td class="skt-edit-data"><a href="#"><?php echo esc_html( 'Edit' ); ?></a></td>
+      <td class="skt-edit-data"><a href="<?php echo untrailingslashit(esc_url(get_permalink()))."?id={$data['id']}"; ?>"><?php echo esc_html( 'Edit' ); ?></a></td>
       <td class="skt-delete-data"><a href="#"><?php echo esc_html( 'Delete' ); ?></a></td>
     </tr>
     <?php endforeach; ?>
